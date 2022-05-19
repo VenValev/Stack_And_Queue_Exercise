@@ -28,23 +28,31 @@ namespace _07_Truck_Tour
                 Pump pump = queue.Peek();
                 int tank = pump.amout;
                 int dist = pump.distance;
+                Queue<Pump> q = new Queue<Pump>();
+                for(int j = 0; j < numberOfPumps; j++)
+                {
+                    Pump arg = queue.Peek();
+                    q.Enqueue(arg);
+                    queue.Enqueue(queue.Peek());
+                    queue.Dequeue();
+                }
 
                 for (int j = 0; j < numberOfPumps - 1; j++)
                 {
                     if (tank - dist < 0)
                     {
-                        queue.Enqueue(queue.Peek());
-                        queue.Dequeue();
+                        q.Enqueue(q.Peek());
+                        q.Dequeue();
                         br = 0;
                         break;
                     }
                     else
                     {
                         tank = tank - dist;
-                        queue.Enqueue(queue.Peek());
-                        queue.Dequeue();
-                        tank += queue.Peek().amout;
-                        dist = queue.Peek().distance;
+                        q.Enqueue(q.Peek());
+                        q.Dequeue();
+                        tank += q.Peek().amout;
+                        dist = q.Peek().distance;
                         br++;
                     }
                 }
@@ -53,7 +61,8 @@ namespace _07_Truck_Tour
                     startPosition = i;
                     break;
                 }
-
+                queue.Enqueue(queue.Peek());
+                queue.Dequeue();
 
             }
 
@@ -74,5 +83,5 @@ namespace _07_Truck_Tour
             this.distance = distance;
         }
     }
-}
+
 }
