@@ -41,7 +41,7 @@ namespace _09_SimpleTextEditor
                 }
                 else if (cmnd[0] == "4")
                 {
-
+                    sText.Pop();
                 }
 
             }
