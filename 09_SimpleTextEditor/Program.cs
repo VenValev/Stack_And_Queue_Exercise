@@ -25,21 +25,23 @@ namespace _09_SimpleTextEditor
                 else if (cmnd[0] == "2")
                 {
                     int lenght = int.Parse(cmnd[1]);
-                    int startIndex = cmnd.Length - lenght;
+                    int startIndex = (text.Length - 1) - lenght;
                     text.Remove(startIndex, lenght);
 
                     sText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "3")
                 {
-                    text.Clear();
-                    text.Append(sText.Peek());
+                    /*text.Clear();
+                    text.Append(sText.Peek());*/
                     int c = int.Parse(cmnd[1]);
                     Console.WriteLine(text[c-1]);
                 }
                 else if (cmnd[0] == "4")
                 {
                     sText.Pop();
+                    text.Clear();
+                    text.Append(sText.Peek());
                 }
 
             }
