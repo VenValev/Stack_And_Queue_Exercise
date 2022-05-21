@@ -10,7 +10,7 @@ namespace _09_SimpleTextEditor
         {
             int n = int.Parse(Console.ReadLine());
             StringBuilder text = new StringBuilder();
-            Stack<string> sText = new Stack<string>();
+            Stack<string> historyOfText = new Stack<string>();
 
             for (int i = 0; i < n; i++)
             {
@@ -20,36 +20,29 @@ namespace _09_SimpleTextEditor
                 if (cmnd[0] == "1")
                 {
                     text.Append(cmnd[1]);
-                    sText.Push(text.ToString());
+                    historyOfText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "2")
                 {
                     int lenght = int.Parse(cmnd[1]);
                     int startIndex = (text.Length) - lenght;
                     text.Remove(startIndex, lenght);
-
-                    sText.Push(text.ToString());
-                    
-                    
+                    historyOfText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "3")
                 {
-                    /*text.Clear();
-                    text.Append(sText.Peek());*/
-                    int c = int.Parse(cmnd[1]);
-                    Console.WriteLine(text[c-1]);
+                    int indexOfChar = int.Parse(cmnd[1]) - 1;
+                    Console.WriteLine(text[indexOfChar]);
                 }
                 else if (cmnd[0] == "4")
                 {
-                    sText.Pop();
+                    historyOfText.Pop();
                     text.Clear();
-                    if(sText.Count > 0)
+                    if(historyOfText.Count > 0)
                     {
-                        text.Append(sText.Peek());
+                        text.Append(historyOfText.Peek());
                     }
-                    
                 }
-
             }
         }
     }
