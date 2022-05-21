@@ -20,10 +20,19 @@ namespace _09_SimpleTextEditor
                 if (cmnd[0] == "1")
                 {
                     text.Append(cmnd[1]);
+                    sText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "2")
                 {
-
+                    int cmndArg = int.Parse(cmnd[1]);
+                    Stack<char> newText = new Stack<char>(text.ToString());
+                    for(int j = 0; j < cmndArg; j++)
+                    {
+                        newText.Pop();
+                    }
+                    text.Clear();
+                    text.Append(newText);
+                    sText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "3")
                 {
