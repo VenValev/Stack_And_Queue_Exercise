@@ -8,14 +8,16 @@ namespace _09_SimpleTextEditor
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            for(int i = 0; i < n; i++)
+            StringBuilder text = new StringBuilder();
+
+            for (int i = 0; i < n; i++)
             {
                 string[] cmnd = Console.ReadLine().Split(' ', 2);
-                StringBuilder text = new StringBuilder(cmnd[1]);
+                
 
                 if (cmnd[0] == "1")
                 {
-
+                    text.Append(cmnd[1]);
                 }
                 else if (cmnd[0] == "2")
                 {
@@ -23,7 +25,8 @@ namespace _09_SimpleTextEditor
                 }
                 else if (cmnd[0] == "3")
                 {
-
+                    int c = int.Parse(cmnd[1]);
+                    Console.WriteLine(text[c-1]);
                 }
                 else if (cmnd[0] == "4")
                 {
