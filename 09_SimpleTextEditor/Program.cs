@@ -36,6 +36,8 @@ namespace _09_SimpleTextEditor
                 }
                 else if (cmnd[0] == "3")
                 {
+                    text.Clear();
+                    text.Append(sText.Peek());
                     int c = int.Parse(cmnd[1]);
                     Console.WriteLine(text[c-1]);
                 }
