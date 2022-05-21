@@ -41,7 +41,11 @@ namespace _09_SimpleTextEditor
                 {
                     sText.Pop();
                     text.Clear();
-                    text.Append(sText.Peek());
+                    if(sText.Count > 0)
+                    {
+                        text.Append(sText.Peek());
+                    }
+                    
                 }
 
             }
