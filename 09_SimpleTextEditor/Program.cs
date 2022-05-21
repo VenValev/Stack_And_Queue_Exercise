@@ -24,14 +24,10 @@ namespace _09_SimpleTextEditor
                 }
                 else if (cmnd[0] == "2")
                 {
-                    int cmndArg = int.Parse(cmnd[1]);
-                    Stack<char> newText = new Stack<char>(text.ToString());
-                    for(int j = 0; j < cmndArg; j++)
-                    {
-                        newText.Pop();
-                    }
-                    text.Clear();
-                    text.Append(newText);
+                    int lenght = int.Parse(cmnd[1]);
+                    int startIndex = cmnd.Length - lenght;
+                    text.Remove(startIndex, lenght);
+
                     sText.Push(text.ToString());
                 }
                 else if (cmnd[0] == "3")
