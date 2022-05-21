@@ -25,10 +25,12 @@ namespace _09_SimpleTextEditor
                 else if (cmnd[0] == "2")
                 {
                     int lenght = int.Parse(cmnd[1]);
-                    int startIndex = (text.Length - 1) - lenght;
+                    int startIndex = (text.Length) - lenght;
                     text.Remove(startIndex, lenght);
 
                     sText.Push(text.ToString());
+                    
+                    
                 }
                 else if (cmnd[0] == "3")
                 {
