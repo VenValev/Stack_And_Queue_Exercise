@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace _09_SimpleTextEditor
@@ -9,6 +10,7 @@ namespace _09_SimpleTextEditor
         {
             int n = int.Parse(Console.ReadLine());
             StringBuilder text = new StringBuilder();
+            Stack<string> sText = new Stack<string>();
 
             for (int i = 0; i < n; i++)
             {
