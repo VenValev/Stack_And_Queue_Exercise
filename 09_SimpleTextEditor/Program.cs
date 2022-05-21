@@ -9,6 +9,7 @@ namespace _09_SimpleTextEditor
             int n = int.Parse(Console.ReadLine());
             for(int i = 0; i < n; i++)
             {
+                string[] cmnd = Console.ReadLine().Split(' ', 2);
 
             }
         }
