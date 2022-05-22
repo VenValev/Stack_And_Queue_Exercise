@@ -49,7 +49,7 @@ namespace _11_KeyRevolver
                         magazine--;
                         expences += priceOfBullet;
                     }
-                    else
+                    if(magazine == 0 && bullets.Count > 0)
                     {
                         Console.WriteLine("Reloading!");
                         magazine = sizeOfGunBarrel;
