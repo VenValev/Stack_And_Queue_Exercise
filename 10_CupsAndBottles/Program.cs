@@ -20,12 +20,10 @@ namespace _10_CupsAndBottles
             while(true)
             {
                 
-                int currentCup = 0;
-                if (capacityOfCups.Count > 0)
-                    currentCup = capacityOfCups.Peek();
+                int currentCup;
                 int currentBottle = 0; //N Capacity
-                if (capacityOfBottles.Count > 0)
-                    currentBottle = capacityOfBottles.Peek();
+                
+                    
 
                 if (capacityOfCups.Count == 0 && capacityOfBottles.Count > 0)
                 {
@@ -45,7 +43,10 @@ namespace _10_CupsAndBottles
                 }
                 else
                 {
-                    while(currentCup > 0 && capacityOfBottles.Count > 0)
+                    currentCup = capacityOfCups.Peek();
+                    currentBottle = capacityOfBottles.Peek();
+
+                    while (currentCup > 0 && capacityOfBottles.Count > 0)
                     {
                         currentCup -= capacityOfBottles.Pop();
                         if(currentCup <= 0)
