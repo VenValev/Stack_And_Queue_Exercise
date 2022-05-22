@@ -16,6 +16,8 @@ namespace _11_KeyRevolver
             Queue<int> locks = new Queue<int>(Console.ReadLine()
                 .Split(' ')
                 .Select(int.Parse));
+            int valueOfInteligence = int.Parse(Console.ReadLine());
+
 
         }
     }
