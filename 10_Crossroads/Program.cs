@@ -13,6 +13,7 @@ namespace _10_Crossroads
             String cmnd;
             Queue<string> cars = new Queue<string>();
             Queue<char> lastCar = new Queue<char>();
+            //Stack<char> s = new Stack<char>();
 
             while((cmnd = Console.ReadLine()) != "END")
             {
@@ -25,7 +26,7 @@ namespace _10_Crossroads
                     if(cars.Count > 0)
                     {
                         char[] c = cars.Dequeue().ToCharArray();
-                        lastCar = c;
+                        FillingTheLastCarQueue(lastCar, c);
                     }
                 }
                 else
@@ -33,8 +34,14 @@ namespace _10_Crossroads
                     cars.Enqueue(cmnd);
                 }
             }
+        }
 
-
+         static void FillingTheLastCarQueue(Queue<char> lastCar, char[] c)
+        {
+            for(int i = 0; i < c.Length; i++)
+            {
+                lastCar.Enqueue(c[i]);
+            }
         }
     }
 }
