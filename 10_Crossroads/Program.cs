@@ -18,24 +18,24 @@ namespace _10_Crossroads
             while(true)
             {
                 cmnd = Console.ReadLine();
-                int currentTime = greenLightTime;
+                int timeNeeded = greenLightTime;
 
                 if (cmnd == "green")
                 {
-                    while (currentTime > 0 && cars.Count > 0)
+                    while (timeNeeded > 0 && cars.Count > 0)
                     {
                         string c = cars.Dequeue();
-                        currentTime = currentTime - c.Length;
-                        if(currentTime <= 0)
+                        timeNeeded = timeNeeded - c.Length;
+                        if(timeNeeded <= 0)
                         {
-                            if((freeWindow + currentTime) >= 0)
+                            if((freeWindow - Math.Abs(timeNeeded)) >= 0)
                             {
                                 br++;
                                 continue;
                             }
                             else
                             {
-                                int positionOfCrash = c.Length + (currentTime + freeWindow);
+                                int positionOfCrash = c.Length - Math.Abs((freeWindow - Math.Abs(timeNeeded)));
                                 Console.WriteLine("A crash happened!");
                                 Console.WriteLine($"{c} was hit at {c[positionOfCrash]}.");
                                 flag = true;
@@ -58,14 +58,6 @@ namespace _10_Crossroads
                 }
             }
 
-        }
-
-         static void FillingTheLastCarQueue(Queue<char> lastCar, char[] c)
-        {
-            for(int i = 0; i < c.Length; i++)
-            {
-                lastCar.Enqueue(c[i]);
-            }
         }
     }
 }
