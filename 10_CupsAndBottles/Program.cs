@@ -31,7 +31,10 @@ namespace _10_CupsAndBottles
                 }
                 else if (capacityOfBottles.Count == 0 && capacityOfCups.Count > 0)
                 {
-
+                    Console.Write("Cups: ");
+                    Console.Write(String.Join(' ', capacityOfCups));
+                    Console.WriteLine();
+                    Console.WriteLine($"Wasted litters of water: {wastedWater}");
                 }
                 else
                 {
