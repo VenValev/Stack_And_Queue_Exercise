@@ -18,6 +18,7 @@ namespace _11_KeyRevolver
                 .Select(int.Parse));
             int valueOfInteligence = int.Parse(Console.ReadLine());
             int expences = 0;
+            int magazine = sizeOfGunBarrel;
 
             while (true)
             {
@@ -30,6 +31,16 @@ namespace _11_KeyRevolver
                 else if(locks.Count == 0)
                 {
                     Console.WriteLine($"{bullets.Count} bullets left. Earned ${valueOfInteligence - expences}");
+                    break;
+                }
+                else
+                {
+                    int bullet = bullets.Pop();
+                    if(bullet <= locks.Peek() && magazine > 0)
+                    {
+                        Console.WriteLine("Bang!");
+                    }
+                    else
                 }
             }
         }
