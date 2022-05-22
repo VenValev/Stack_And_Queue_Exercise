@@ -21,9 +21,7 @@ namespace _10_CupsAndBottles
             {
                 
                 int currentCup;
-                int currentBottle = 0; //N Capacity
-                
-                    
+                int currentBottle; //N Capacity
 
                 if (capacityOfCups.Count == 0 && capacityOfBottles.Count > 0)
                 {
