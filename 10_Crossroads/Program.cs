@@ -12,7 +12,7 @@ namespace _10_Crossroads
             int freeWindow = int.Parse(Console.ReadLine());
             String cmnd;
             Queue<string> cars = new Queue<string>();
-            Queue<char> lastCar = new Queue<char>();
+            //Queue<char> lastCar = new Queue<char>();
             //Stack<char> s = new Stack<char>();
 
             while((cmnd = Console.ReadLine()) != "END")
@@ -25,8 +25,16 @@ namespace _10_Crossroads
                     }
                     if(cars.Count > 0)
                     {
-                        char[] c = cars.Dequeue().ToCharArray();
-                        FillingTheLastCarQueue(lastCar, c);
+                        string lastCar = cars.Dequeue();
+
+                        //FillingTheLastCarQueue(lastCar, c);
+
+                        if(lastCar.Length > freeWindow)
+                        {
+                            Console.WriteLine("A crash happened!");
+                            Console.WriteLine($"{lastCar} was hit at{lastCar[freeWindow]}");
+
+                        }
                     }
                 }
                 else
