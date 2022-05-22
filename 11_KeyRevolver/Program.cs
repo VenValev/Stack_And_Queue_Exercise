@@ -9,37 +9,37 @@ namespace _11_KeyRevolver
         static void Main(string[] args)
         {
             int priceOfBullet = int.Parse(Console.ReadLine());
-            int sizeOfGunBarrel = int.Parse(Console.ReadLine());
-            Stack<int> bullets = new Stack<int>(Console.ReadLine()
+            int sizeOfMagazine = int.Parse(Console.ReadLine());
+            Stack<int> numberOfBullets = new Stack<int>(Console.ReadLine()
                 .Split(' ')
                 .Select(int.Parse));
-            Queue<int> locks = new Queue<int>(Console.ReadLine()
+            Queue<int> numberOfLocks = new Queue<int>(Console.ReadLine()
                 .Split(' ')
                 .Select(int.Parse));
             int valueOfInteligence = int.Parse(Console.ReadLine());
             int expences = 0;
-            int magazine = sizeOfGunBarrel;
+            int magazine = sizeOfMagazine;
 
             while (true)
             {
                 
-                if(bullets.Count == 0 && locks.Count > 0)
+                if(numberOfBullets.Count == 0 && numberOfLocks.Count > 0)
                 {
-                    Console.WriteLine($"Couldn't get through. Locks left: {locks.Count}");
+                    Console.WriteLine($"Couldn't get through. Locks left: {numberOfLocks.Count}");
                     break;
                 }
-                else if(locks.Count == 0)
+                else if(numberOfLocks.Count == 0)
                 {
-                    Console.WriteLine($"{bullets.Count} bullets left. Earned ${valueOfInteligence - expences}");
+                    Console.WriteLine($"{numberOfBullets.Count} bullets left. Earned ${valueOfInteligence - expences}");
                     break;
                 }
                 else
                 {
-                    int bullet = bullets.Pop();
-                    if(bullet <= locks.Peek() && magazine > 0)
+                    int bullet = numberOfBullets.Pop();
+                    if(bullet <= numberOfLocks.Peek() && magazine > 0)
                     {
                         Console.WriteLine("Bang!");
-                        locks.Dequeue();
+                        numberOfLocks.Dequeue();
                         magazine--;
                         expences += priceOfBullet;
                     }
@@ -49,10 +49,10 @@ namespace _11_KeyRevolver
                         magazine--;
                         expences += priceOfBullet;
                     }
-                    if(magazine == 0 && bullets.Count > 0)
+                    if(magazine == 0 && numberOfBullets.Count > 0)
                     {
                         Console.WriteLine("Reloading!");
-                        magazine = sizeOfGunBarrel;
+                        magazine = sizeOfMagazine;
                     }
                 }
             }
