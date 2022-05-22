@@ -39,8 +39,19 @@ namespace _11_KeyRevolver
                     if(bullet <= locks.Peek() && magazine > 0)
                     {
                         Console.WriteLine("Bang!");
+                        locks.Dequeue();
+                        magazine--;
+                    }
+                    else if(magazine > 0)
+                    {
+                        Console.WriteLine("Ping!");
+                        magazine--;
                     }
                     else
+                    {
+                        Console.WriteLine("Reloading!");
+                        magazine = sizeOfGunBarrel;
+                    }
                 }
             }
         }
