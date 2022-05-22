@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace _10_Crossroads
 {
@@ -9,10 +11,19 @@ namespace _10_Crossroads
             int greenLightTime = int.Parse(Console.ReadLine());
             int freeWindow = int.Parse(Console.ReadLine());
             String cmnd;
+            Queue<string> cars = new Queue<string>();
+            Queue<string> lastCar = new Queue<string>();
 
-            while((cmnd = Console.ReadLine()) != "End")
+            while((cmnd = Console.ReadLine()) != "END")
             {
+                if(cmnd == "green")
+                {
 
+                }
+                else
+                {
+
+                }
             }
 
 
