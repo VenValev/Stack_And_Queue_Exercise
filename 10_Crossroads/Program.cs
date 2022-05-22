@@ -13,7 +13,7 @@ namespace _10_Crossroads
             String cmnd;
             Queue<string> cars = new Queue<string>();
             int br = 0;
-
+            bool flag = false;
 
             while(true)
             {
@@ -22,7 +22,7 @@ namespace _10_Crossroads
 
                 if (cmnd == "green")
                 {
-                    while (currentTime > 0)
+                    while (currentTime > 0 && cars.Count > 0)
                     {
                         string c = cars.Dequeue();
                         currentTime = currentTime - c.Length;
@@ -31,17 +31,20 @@ namespace _10_Crossroads
                             if((freeWindow + currentTime) >= 0)
                             {
                                 br++;
+                                continue;
                             }
                             else
                             {
-                                int positionOfCrash = c.Length - (currentTime + freeWindow);
+                                int positionOfCrash = c.Length + (currentTime + freeWindow);
                                 Console.WriteLine("A crash happened!");
-                                Console.WriteLine($"{c} was hit at {c[positionOfCrash]}");
+                                Console.WriteLine($"{c} was hit at {c[positionOfCrash]}.");
+                                flag = true;
                                 break;
                             }
                         }
                         br++;
                     }
+                    if (flag) break;
                 }
                 else if( cmnd == "END")
                 {
