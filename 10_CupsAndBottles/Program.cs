@@ -19,8 +19,13 @@ namespace _10_CupsAndBottles
 
             while(true)
             {
-                int currentCup = capacityOfCups.Peek();
-                int currentBottle = capacityOfBottles.Peek(); //N Capacity
+                
+                int currentCup = 0;
+                if (capacityOfCups.Count > 0)
+                    currentCup = capacityOfCups.Peek();
+                int currentBottle = 0; //N Capacity
+                if (capacityOfBottles.Count > 0)
+                    currentBottle = capacityOfBottles.Peek();
 
                 if (capacityOfCups.Count == 0 && capacityOfBottles.Count > 0)
                 {
@@ -28,6 +33,7 @@ namespace _10_CupsAndBottles
                     Console.Write(String.Join(' ', capacityOfBottles));
                     Console.WriteLine();
                     Console.WriteLine($"Wasted litters of water: {wastedWater}");
+                    break;
                 }
                 else if (capacityOfBottles.Count == 0 && capacityOfCups.Count > 0)
                 {
@@ -35,6 +41,7 @@ namespace _10_CupsAndBottles
                     Console.Write(String.Join(' ', capacityOfCups));
                     Console.WriteLine();
                     Console.WriteLine($"Wasted litters of water: {wastedWater}");
+                    break;
                 }
                 else
                 {
