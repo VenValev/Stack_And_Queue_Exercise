@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_BalancedParentheses", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_SimpleTextEditor", "09_SimpleTextEditor\09_SimpleTextEditor.csproj", "{3B815E59-4665-4073-936C-76A4B80CE90F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Crossroads", "10_Crossroads\10_Crossroads.csproj", "{F926F932-7A2F-408E-A139-636303DC5768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Crossroads", "10_Crossroads\10_Crossroads.csproj", "{F926F932-7A2F-408E-A139-636303DC5768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_KeyRevolver", "11_KeyRevolver\11_KeyRevolver.csproj", "{968BAFDA-A204-48DD-883A-BA02D7B1267E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F926F932-7A2F-408E-A139-636303DC5768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F926F932-7A2F-408E-A139-636303DC5768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F926F932-7A2F-408E-A139-636303DC5768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968BAFDA-A204-48DD-883A-BA02D7B1267E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968BAFDA-A204-48DD-883A-BA02D7B1267E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968BAFDA-A204-48DD-883A-BA02D7B1267E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968BAFDA-A204-48DD-883A-BA02D7B1267E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
