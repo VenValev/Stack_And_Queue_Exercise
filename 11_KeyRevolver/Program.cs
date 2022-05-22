@@ -41,11 +41,13 @@ namespace _11_KeyRevolver
                         Console.WriteLine("Bang!");
                         locks.Dequeue();
                         magazine--;
+                        expences += priceOfBullet;
                     }
                     else if(magazine > 0)
                     {
                         Console.WriteLine("Ping!");
                         magazine--;
+                        expences += priceOfBullet;
                     }
                     else
                     {
