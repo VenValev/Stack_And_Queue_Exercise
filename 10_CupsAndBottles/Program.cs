@@ -20,11 +20,11 @@ namespace _10_CupsAndBottles
             while(true)
             {
                 int currentCup = capacityOfCups.Peek();
-                int currentBottle = capacityOfBottles.Peek();
+                int currentBottle = capacityOfBottles.Peek(); //N Capacity
 
                 if (capacityOfCups.Count == 0 && capacityOfBottles.Count > 0)
                 {
-
+                    Console.WriteLine();
                 }
                 else if (capacityOfBottles.Count == 0 && capacityOfCups.Count > 0)
                 {
@@ -32,12 +32,13 @@ namespace _10_CupsAndBottles
                 }
                 else
                 {
-                    while(currentCup > 0)
+                    while(currentCup > 0 && capacityOfBottles.Count > 0)
                     {
                         currentCup -= capacityOfBottles.Pop();
-                        if(currentCup < 0)
+                        if(currentCup <= 0)
                         {
                             wastedWater += Math.Abs(currentCup);
+                            capacityOfCups.Dequeue();
                         }
                     }
                 }
