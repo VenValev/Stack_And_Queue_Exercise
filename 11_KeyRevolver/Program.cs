@@ -17,8 +17,21 @@ namespace _11_KeyRevolver
                 .Split(' ')
                 .Select(int.Parse));
             int valueOfInteligence = int.Parse(Console.ReadLine());
+            int expences = 0;
 
-
+            while (true)
+            {
+                
+                if(bullets.Count == 0 && locks.Count > 0)
+                {
+                    Console.WriteLine($"Couldn't get through. Locks left: {locks.Count}");
+                    break;
+                }
+                else if(locks.Count == 0)
+                {
+                    Console.WriteLine($"{bullets.Count} bullets left. Earned ${valueOfInteligence - expences}");
+                }
+            }
         }
     }
 }
