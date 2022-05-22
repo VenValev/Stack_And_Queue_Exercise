@@ -28,11 +28,19 @@ namespace _10_Crossroads
                         currentTime = currentTime - c.Length;
                         if(currentTime <= 0)
                         {
-                            if((freeWindow + currentTime) - c.Length >= 0)
+                            if((freeWindow + currentTime) >= 0)
                             {
                                 br++;
                             }
+                            else
+                            {
+                                int positionOfCrash = c.Length - (currentTime + freeWindow);
+                                Console.WriteLine("A crash happened!");
+                                Console.WriteLine($"{c} was hit at {c[positionOfCrash]}");
+                                break;
+                            }
                         }
+                        br++;
                     }
                 }
                 else if( cmnd == "END")
