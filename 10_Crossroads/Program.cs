@@ -6,7 +6,16 @@ namespace _10_Crossroads
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int greenLightTime = int.Parse(Console.ReadLine());
+            int freeWindow = int.Parse(Console.ReadLine());
+            String cmnd;
+
+            while((cmnd = Console.ReadLine()) != "End")
+            {
+
+            }
+
+
         }
     }
 }
